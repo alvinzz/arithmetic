@@ -642,6 +642,7 @@ class Abacus(torch.nn.Module):
         ).gather(1, segment_ids)
 
         positions = index - segment_idx_step_fn - space_step_fn_per_segment
+        positions += 1
 
         return positions * ~(delimiters_mask | spaces_mask)
 
