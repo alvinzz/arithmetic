@@ -662,7 +662,7 @@ class Abacus(torch.nn.Module):
             == 16 | input_ids
             == 17
         )
-        spaces_mask = input_ids == 18
+        spaces_mask = input_ids == 0
         output = self.helper(delimiters_mask, spaces_mask)
 
         k = 0

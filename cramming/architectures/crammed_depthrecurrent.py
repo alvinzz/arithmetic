@@ -785,7 +785,7 @@ class ScriptableRecurrentLMBPTT(PreTrainedModel):
             masks = max_indices.unsqueeze(0) > indices_of_equals.unsqueeze(
                 1
             )  # fill tensor after including index of = sign for each row
-            masks &= input_ids != 18
+            masks &= input_ids != 0
         # else: # mask only the random padding
         # masks = input_ids != 0
 
